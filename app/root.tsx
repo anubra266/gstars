@@ -11,6 +11,7 @@ import {
 import type { MetaFunction } from "remix";
 import { Button, ChakraProvider, Heading } from "@chakra-ui/react";
 import { ChakraDocument, ChakraStyles } from "~/chakraDocument";
+import { theme } from "~/theme";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -32,7 +33,7 @@ export default function App() {
             <ChakraStyles emotionCache={emotionCache} />
           </head>
           <body>
-            <ChakraProvider>
+            <ChakraProvider theme={theme}>
               <Outlet />
             </ChakraProvider>
             <ScrollRestoration />
